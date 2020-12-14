@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+  <title>Konsumsi Antara - Dashboard</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-style.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      ;
+      font-size: 18px !important;
+      overflow: hidden;
+    }
+
+    #pilih_tabel {
+      margin-top: -1px;
+      float: right;
+      padding-right: 2px;
+      margin-right: 34.8%;
+      margin-left: 2px;
+      text-decoration: none;
+    }
+
+    #pilih_tabel:hover {
+      cursor: pointer;
+    }
+
+    div#title {
+      padding-right: 0px;
+      margin-bottom: 0px;
+      text-align: right;
+    }
+
+    .inner,
+    #pilih_tabel {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      ;
+    }
+
+    div#toolbar-container {
+      display: none !important;
+    }
+
+    select {
+      font-family: "Roboto Slab", serif;
+      font-size: 18px;
+      border: none;
+      line-height: 10px;
+    }
+
+    .logo {
+      width: 25px;
+      height: 25px;
+      color: orange;
+    }
+  </style>
+
+</head>
+<script>
+  function onloading() {
+    document.getElementById("tabel_supply").style.display = 'block';
+    document.getElementById("tabel_use").style.display = 'none';
+    document.getElementById("tabel_io").style.display = 'none';
+  }
+
+  function pilih_tabel() {
+    var dom = document.getElementById("pilih_tabel").value;
+    if (dom == "1") {
+      document.getElementById("tabel_supply").style.display = 'block';
+      document.getElementById("tabel_use").style.display = 'none';
+      document.getElementById("tabel_io").style.display = 'none';
+    } else if (dom == "2") {
+      document.getElementById("tabel_supply").style.display = 'none';
+      document.getElementById("tabel_use").style.display = 'block';
+      document.getElementById("tabel_io").style.display = 'none';
+    } else if (dom == "3") {
+      document.getElementById("tabel_supply").style.display = 'none';
+      document.getElementById("tabel_use").style.display = 'none';
+      document.getElementById("tabel_io").style.display = 'block';
+    }
+  }
+</script>
+
+<body class="is-preload" onload="onloading()">
+
+  <div id="main">
+    <div id="title"></div>
+    <label for="pilih_tabel">Tabel</label>
+    <select name="pilih_tabel" id="pilih_tabel" style="display:block;" onchange="pilih_tabel()">
+      <option value="1" selected>Supply</option>
+      <option value="2">Use</option>
+      <option value="3">I-O</option>
+    </select>
+  </div>
+
+  <div>
+    <a class="btn btn-large btn-success"
+      href="https://public.tableau.com/vizql/w/TabelSupply/v/Supply/tempfile/sessions/7A85130058E94E1FBA076B62295B6E79-0:0/?key=277994141&keepfile=yes&attachment=yes">
+      <img src="assets/images/excel.png" class="logo"> Download</a>
+  </div>
+
+  <div id="tabel_supply">
+    <iframe
+      src="https://public.tableau.com/views/TabelSupply/Supply?:language=en&:display_count=y&:toolbar=n&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      width="100%" height="465px" frameBorder="0"></iframe>
+  </div>
+  <div id="tabel_use">
+    <iframe
+      src="https://public.tableau.com/views/TabelUse/Use?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      width="100%" height="465px" frameBorder="0"></iframe>
+  </div>
+  <div id="tabel_io">
+    <iframe
+      src="https://public.tableau.com/views/TabelIO_16078428311070/IO?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      width="100%" height="465px" frameBorder="0"></iframe>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/transition.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+
+
+</body>
+
+</html>

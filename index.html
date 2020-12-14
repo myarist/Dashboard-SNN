@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+  <title>Dashboard Neraca Nasional</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/neraca.png">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-style.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+
+  <style>
+    body {
+      font-family: "Segoe UI";
+      font-size: 18px !important;
+      overflow: hidden;
+    }
+
+    #pilih_menu {
+      font-size: 50px;
+      background-color: transparent;
+      margin-top: 1px;
+      float: right;
+      padding-right: 24px;
+      margin-right: 41%;
+      margin-left: 2px;
+    }
+
+    #pilih_tabel {
+      font-size: 50px;
+      background-color: transparent;
+      margin-top: 1px;
+      float: right;
+      padding-right: 24px;
+      margin-right: 14%;
+      margin-left: 2px;
+    }
+
+    #pilih_menu:hover {
+      cursor: pointer;
+    }
+
+    #title,
+    #title2 {
+      text-align: right;
+      top: 28px;
+      font-size: 50px;
+      left: 45%;
+      padding-right: 0px;
+      margin-bottom: 0px;
+    }
+
+    #title select,
+    #title2 select {
+      color: white;
+    }
+
+    select::-ms-expand {
+      display: none;
+    }
+
+    #title option,
+    #title2 option {
+      color: black;
+    }
+
+    #toolbar-container {
+      display: none !important;
+    }
+
+    select {
+      /* font-family: "Roboto Slab"; */
+      font-size: 18px;
+      border: none;
+    }
+
+    .wadah {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .imgh {
+      width: 100%;
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Segoe UI";
+    }
+
+    .centered select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .centered h1 {
+      float: right;
+      position: absolute;
+      right: -241px;
+      top: 4px;
+      font-size: 50px;
+      font-weight: 400;
+    }
+
+    #pdf {
+      background-color: coral;
+      border-color: coral;
+    }
+
+    #excel {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+
+    #download {
+      float: left;
+      margin: 4px;
+    }
+
+    #pdf .logo {
+      width: 25px;
+      height: 25px;
+    }
+
+    .logo {
+      width: 25px;
+      height: 25px;
+    }
+
+    #judul {
+      top: 8px;
+    }
+  </style>
+
+  <script>
+    function onloading() {
+      document.getElementById("pilih_menu").style.marginRight = "40%";
+      document.getElementById("pilih_menu").style.marginTop = "1px";
+      document.getElementById("dashboard").style.display = 'block';
+      document.getElementById("metadata").style.display = 'none';
+      document.getElementById("tabel_supply").style.display = 'none';
+      document.getElementById("tabel_use").style.display = 'none';
+      document.getElementById("tabel_io").style.display = 'none';
+    }
+
+    function pilih_menu() {
+      var dom = document.getElementById("pilih_menu").value;
+      if (dom == "1") {
+        document.getElementById("pilih_menu").style.marginRight = "40%";
+        document.getElementById("pilih_menu").style.marginTop = "1px";
+          document.getElementById("judul").style.right = "-241px";
+        document.title = "Dashboard";
+        document.getElementById("dashboard").style.display = 'block';
+        document.getElementById("metadata").style.display = 'none';
+        document.getElementById("pilih_tabel").style.display = 'none';
+        document.getElementById("tabel_supply").style.display = 'none';
+        document.getElementById("tabel_use").style.display = 'none';
+        document.getElementById("tabel_io").style.display = 'none';
+      } else if (dom == "2") {
+        var dot = document.getElementById("pilih_tabel").value;
+        if (dot == "1") {
+          document.getElementById("pilih_menu").style.marginRight = "48%";
+          document.getElementById("pilih_tabel").style.marginRight = "26%";
+          document.getElementById("judul").style.right = "-260px";
+          document.getElementById("pilih_menu").style.marginTop = "1px";
+          document.title = "Tabel Supply";
+          document.getElementById("dashboard").style.display = 'none';
+          document.getElementById("metadata").style.display = 'none';
+          document.getElementById("pilih_tabel").style.display = 'block';
+          document.getElementById("tabel_supply").style.display = 'block';
+          document.getElementById("tabel_use").style.display = 'none';
+          document.getElementById("tabel_io").style.display = 'none';
+        } else if (dot == "2") {
+          document.getElementById("pilih_menu").style.marginRight = "33%";
+          document.getElementById("pilih_tabel").style.marginRight = "4%";
+          document.getElementById("judul").style.right = "-229px";
+          document.getElementById("pilih_menu").style.marginTop = "1px";
+          document.title = "Tabel Use";
+          document.getElementById("dashboard").style.display = 'none';
+          document.getElementById("metadata").style.display = 'none';
+          document.getElementById("pilih_tabel").style.display = 'block';
+          document.getElementById("tabel_supply").style.display = 'none';
+          document.getElementById("tabel_use").style.display = 'block';
+          document.getElementById("tabel_io").style.display = 'none';
+        } else if (dot == "3") {
+          document.getElementById("pilih_menu").style.marginRight = "31%";
+          document.getElementById("pilih_tabel").style.marginRight = "0%";
+          document.getElementById("judul").style.right = "-225px";
+          document.getElementById("pilih_menu").style.marginTop = "1px";
+          document.title = "Tabel IO";
+          document.getElementById("dashboard").style.display = 'none';
+          document.getElementById("metadata").style.display = 'none';
+          document.getElementById("pilih_tabel").style.display = 'block';
+          document.getElementById("tabel_supply").style.display = 'none';
+          document.getElementById("tabel_use").style.display = 'none';
+          document.getElementById("tabel_io").style.display = 'block';
+        }
+      } else if (dom == "3") {
+        document.getElementById("pilih_menu").style.marginRight = "33%";
+        document.getElementById("judul").style.right = "-229px";
+        document.getElementById("pilih_menu").style.marginTop = "1px";
+        document.title = "Metadata";
+        document.getElementById("dashboard").style.display = 'none';
+        document.getElementById("metadata").style.display = 'block';
+        document.getElementById("pilih_tabel").style.display = 'none';
+        document.getElementById("tabel_supply").style.display = 'none';
+        document.getElementById("tabel_use").style.display = 'none';
+        document.getElementById("tabel_io").style.display = 'none';
+      }
+    }
+  </script>
+
+</head>
+
+<body class="is-preload" onload="onloading()">
+
+  <div class="wadah">
+    <img class="imgh" src="assets/images/header no tulisan.png" alt="Header">
+    <div id="title" class="centered">
+      <select name="pilih_menu" id="pilih_menu" style="display:block;" onchange="pilih_menu()">
+        <option value="1" selected>Dashboard</option>
+        <option value="2">Tabel</option>
+        <option value="3">Metadata</option>
+      </select>
+      <h1 id="judul">Neraca Nasional</h1>
+    </div>
+    <div id="title2" class="centered">
+      <select name="pilih_tabel" id="pilih_tabel" style="display:none;" onchange="pilih_menu()">
+        <option value="1" selected>Supply</option>
+        <option value="2">Use</option>
+        <option value="3">I-O</option>
+      </select>
+    </div>
+  </div>
+
+  <h5 style="margin: 0;">
+    <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"
+      style="padding: 5px 0 5px 0; font-weight: 400; font-size: 18px; color: #347cbe;">
+      <strong>Produk Domestik Bruto</strong> di Negara Sunda Empire pada tahun 2018 berada pada angka <strong><span
+        style="color: #2ff357;">774.039</span></strong> &nbsp; | &nbsp;
+      Sumbangan terbesar dihasilkan oleh <strong>Konsumsi Rumah Tangga</strong> yakni sebesar <strong><span
+        style="color: rgb(248, 124, 8);">44,11%</span></strong> &nbsp; | &nbsp;
+      Kemudian dihasilkan pula <strong>Output Multiplier</strong> tertinggi sebesar <strong><span
+        style="color: #00fff2;">2,654</span></strong> yang berasal dari <strong>Industri Konstruksi</strong> 
+    </marquee>
+  </h5>
+
+  <div id="dashboard">
+    <iframe name="iframe" id="iframe" scrolling="yes"
+      src="https://public.tableau.com/views/dashboardsnn_16078201610780/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      height="540px" width="100%" frameBorder="0"></iframe>
+  </div>
+
+  <div id="metadata">
+    <iframe name="iframe" id="iframe" scrolling="yes"
+      src="https://public.tableau.com/views/komponenpdb_16078596084600/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      height="530px" width="100%" frameBorder="0"></iframe>
+  </div>
+
+  <div id="tabel_supply">
+    <div id="download">
+      <a id="excel" class="btn btn-large btn-success"
+        href="https://ayibza.sn.files.1drv.com/y4mBjXeFQ4O4ZJ-01g9xb8wGsIt3721j-p_0dUNfvWf1kYBx0LOWivuUik0JI5ZXIvK6AD9b4HIuRTU9Fj5Y51DTV3CIspxkmTsjpzqM1m-CgkPi_07Mazmgzv9GkmnljPqGvhKnS7nMjBaWRqIISe7Cbalsdn0DrY4KBh9IYn0Wh0?access_token=EwAwA61DBAAUzl/nWKUlBg14ZGcybuC4/OHFdfEAAVLqT%2bDToh9Ll9VrsA/4305pkHPIwsqZUpLpL4VnXWnX%2b7oHQ%2bH6oqA0lXLRIGBTVTq0BEq599eRcYkByZaVD4VyklzgMZowS0bIJIZqm7Cua1blL3F2%2b3K99Rzh/xjr%2bzAt%2bOdFojl9icNtL/HcR3/xRh2GcG0fl43FWeXDakLNGlaYmf2oaF/IjPgWZtHTc3hGrrhDjRh70OiLDQ9dC6jVlvOrYdAPvUpQinWIXCg4qK5by%2b7Y8No8iH3ztUqwjrkSZtH3cg%2bOmW2tb4GPjRMuZW8rfduI5EK5WbsAhExfCmGfOICYTDRfStSoLhFlaNNkttaO10hMnM90qAc1l20DZgAACP5PZJLVdHNhAAKBwsdvs67lL4NyWQ0pEbzd1Cw7DCNn1CPl%2bEe%2bOlQ09SWyQHfj7FOhVLtD4sHj4qwCyDZ/ClH1GA8jBJ6IhwXH/lUyJmytNS4ParW1R/HcJFs/%2bqmRh8fGnbHL9zKy8MkCsEzjnX5K1rO1j6IQoXNGTcq1dDbwwIrlcH3iow8tLma4RiFK1be5vdTNf/DeIyUMkPYl02Mbdy1ddskgbZoo0vZizxpWGV3CEKLy%2b7kjTP3wVVTxDiH5FBWs8v97YpvKXS64Xqv0Hzaz0obFMapU%2bacskvpJEfUWNQDUCVeII/s9rsQughGKJlv8RfLRmh9gBZFr8SRrq083/ebRYnajz2Qaq2RXkj6gPoCvAZeNj/ujaUm%2bBleYPt/nLRAZFl4eDpSeFt/Xb4BoX3bNNMkZzDyXMrf28VtpxtTt2oYE2%2b30wvMZawhp5FUlJ2Zd8fJVr57bXSqQC0xiA1Gnv5F/rJpxgEWAv5tPUutCoMH7Tu8CeqcIyU0ngJqNsVY8G0YdND6G9LqHBbvYkmL5kpmOZKCZlIvHnMa1uUbzrQk0kcplqSi8Qua4LeUpv2FHv7/OPHc6mWcJDjKKQbFlvFtefVb7UADHIjfDG/Aumy/Loy8Z4XonySy589DFf6UjcUUmkA8EL0UQd5KUT0yRg%2bUPo%2bcgFuaWRTJV51RJE76p3yIC">
+        <img src="assets/images/excel.png" class="logo"> Excel</a>
+    </div>
+    <!-- <div id="download">
+      <a id="pdf" class="btn btn-large btn-success"
+        href="https://public.tableau.com/vizql/w/TabelSupply/v/Supply/tempfile/sessions/625F826804F04F049F1534E72656D035-0:0/?key=2523447150&keepfile=yes&attachment=yes">
+        <img height="20px" src="assets/images/pdf.png" class="logo"> PDF</a>
+    </div> -->
+    <iframe name="iframe" id="iframe" scrolling="yes"
+      src="https://public.tableau.com/views/TabelSupply/Supply?:language=en&:display_count=y&:publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      height="480px" width="100%" frameBorder="0"></iframe>
+  </div>
+
+  <div id="tabel_use">
+    <div id="download">
+      <a id="excel" class="btn btn-large btn-success"
+        href="https://ak1zkq.sn.files.1drv.com/y4mEj4vV0xGUdi7RRjPdsFWNzNQLaczp5Q0yQQUbS7SMwMXXaOIwL2sX9_eQka5mCe3vde_lCHxrifT6o8fAujydykZf2z6ENqfm64TwieFROhl39qJAeryBkKL9Ay5kUMzmwmq7qtC8q72UL4Sq2Z-eHt7J1GG-b7zBllYlhJV0Ro?access_token=EwAwA61DBAAUzl/nWKUlBg14ZGcybuC4/OHFdfEAAVLqT%2bDToh9Ll9VrsA/4305pkHPIwsqZUpLpL4VnXWnX%2b7oHQ%2bH6oqA0lXLRIGBTVTq0BEq599eRcYkByZaVD4VyklzgMZowS0bIJIZqm7Cua1blL3F2%2b3K99Rzh/xjr%2bzAt%2bOdFojl9icNtL/HcR3/xRh2GcG0fl43FWeXDakLNGlaYmf2oaF/IjPgWZtHTc3hGrrhDjRh70OiLDQ9dC6jVlvOrYdAPvUpQinWIXCg4qK5by%2b7Y8No8iH3ztUqwjrkSZtH3cg%2bOmW2tb4GPjRMuZW8rfduI5EK5WbsAhExfCmGfOICYTDRfStSoLhFlaNNkttaO10hMnM90qAc1l20DZgAACP5PZJLVdHNhAAKBwsdvs67lL4NyWQ0pEbzd1Cw7DCNn1CPl%2bEe%2bOlQ09SWyQHfj7FOhVLtD4sHj4qwCyDZ/ClH1GA8jBJ6IhwXH/lUyJmytNS4ParW1R/HcJFs/%2bqmRh8fGnbHL9zKy8MkCsEzjnX5K1rO1j6IQoXNGTcq1dDbwwIrlcH3iow8tLma4RiFK1be5vdTNf/DeIyUMkPYl02Mbdy1ddskgbZoo0vZizxpWGV3CEKLy%2b7kjTP3wVVTxDiH5FBWs8v97YpvKXS64Xqv0Hzaz0obFMapU%2bacskvpJEfUWNQDUCVeII/s9rsQughGKJlv8RfLRmh9gBZFr8SRrq083/ebRYnajz2Qaq2RXkj6gPoCvAZeNj/ujaUm%2bBleYPt/nLRAZFl4eDpSeFt/Xb4BoX3bNNMkZzDyXMrf28VtpxtTt2oYE2%2b30wvMZawhp5FUlJ2Zd8fJVr57bXSqQC0xiA1Gnv5F/rJpxgEWAv5tPUutCoMH7Tu8CeqcIyU0ngJqNsVY8G0YdND6G9LqHBbvYkmL5kpmOZKCZlIvHnMa1uUbzrQk0kcplqSi8Qua4LeUpv2FHv7/OPHc6mWcJDjKKQbFlvFtefVb7UADHIjfDG/Aumy/Loy8Z4XonySy589DFf6UjcUUmkA8EL0UQd5KUT0yRg%2bUPo%2bcgFuaWRTJV51RJE76p3yIC">
+        <img src="assets/images/excel.png" class="logo"> Excel</a>
+    </div>
+    <!-- <div id="download">
+      <a id="pdf" class="btn btn-large btn-success"
+        href="https://public.tableau.com/vizql/w/TabelSupply/v/Supply/tempfile/sessions/625F826804F04F049F1534E72656D035-0:0/?key=2523447150&keepfile=yes&attachment=yes">
+        <img src="assets/images/pdf.png" class="logo"> PDF</a>
+    </div> -->
+    <iframe name="iframe" id="iframe" scrolling="yes"
+      src="https://public.tableau.com/views/TabelUse/Use?:language=en&:display_count=y&:publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      height="480px" width="100%" frameBorder="0"></iframe>
+  </div>
+
+  <div id="tabel_io">
+    <div id="download">
+      <a id="excel" class="btn btn-large btn-success"
+        href="https://npbcbg.sn.files.1drv.com/y4mt1jaqu_bKTi_I25Q8OwNAQyyvo3QH0qe8zeiikMUqkKJ1Z3sjXCOTLFsNbEIJaR1xAOrqsLvJW06VeyzZ5ArCK2d2QOKuE9j4MJtiFbUGBdQhEQiZ72-MLQVkHTQPmeKee4oYNG2K6SZa9tUgxzFut0jFjkZXaYV6m0wyhyDsI4?access_token=EwAwA61DBAAUzl/nWKUlBg14ZGcybuC4/OHFdfEAAVLqT%2bDToh9Ll9VrsA/4305pkHPIwsqZUpLpL4VnXWnX%2b7oHQ%2bH6oqA0lXLRIGBTVTq0BEq599eRcYkByZaVD4VyklzgMZowS0bIJIZqm7Cua1blL3F2%2b3K99Rzh/xjr%2bzAt%2bOdFojl9icNtL/HcR3/xRh2GcG0fl43FWeXDakLNGlaYmf2oaF/IjPgWZtHTc3hGrrhDjRh70OiLDQ9dC6jVlvOrYdAPvUpQinWIXCg4qK5by%2b7Y8No8iH3ztUqwjrkSZtH3cg%2bOmW2tb4GPjRMuZW8rfduI5EK5WbsAhExfCmGfOICYTDRfStSoLhFlaNNkttaO10hMnM90qAc1l20DZgAACP5PZJLVdHNhAAKBwsdvs67lL4NyWQ0pEbzd1Cw7DCNn1CPl%2bEe%2bOlQ09SWyQHfj7FOhVLtD4sHj4qwCyDZ/ClH1GA8jBJ6IhwXH/lUyJmytNS4ParW1R/HcJFs/%2bqmRh8fGnbHL9zKy8MkCsEzjnX5K1rO1j6IQoXNGTcq1dDbwwIrlcH3iow8tLma4RiFK1be5vdTNf/DeIyUMkPYl02Mbdy1ddskgbZoo0vZizxpWGV3CEKLy%2b7kjTP3wVVTxDiH5FBWs8v97YpvKXS64Xqv0Hzaz0obFMapU%2bacskvpJEfUWNQDUCVeII/s9rsQughGKJlv8RfLRmh9gBZFr8SRrq083/ebRYnajz2Qaq2RXkj6gPoCvAZeNj/ujaUm%2bBleYPt/nLRAZFl4eDpSeFt/Xb4BoX3bNNMkZzDyXMrf28VtpxtTt2oYE2%2b30wvMZawhp5FUlJ2Zd8fJVr57bXSqQC0xiA1Gnv5F/rJpxgEWAv5tPUutCoMH7Tu8CeqcIyU0ngJqNsVY8G0YdND6G9LqHBbvYkmL5kpmOZKCZlIvHnMa1uUbzrQk0kcplqSi8Qua4LeUpv2FHv7/OPHc6mWcJDjKKQbFlvFtefVb7UADHIjfDG/Aumy/Loy8Z4XonySy589DFf6UjcUUmkA8EL0UQd5KUT0yRg%2bUPo%2bcgFuaWRTJV51RJE76p3yIC">
+        <img src="assets/images/excel.png" class="logo"> Excel</a>
+    </div>
+    <!-- <div id="download">
+      <a id="pdf" class="btn btn-large btn-success"
+        href="https://public.tableau.com/vizql/w/TabelSupply/v/Supply/tempfile/sessions/625F826804F04F049F1534E72656D035-0:0/?key=2523447150&keepfile=yes&attachment=yes">
+        <img src="assets/images/pdf.png" class="logo"> PDF</a>
+    </div> -->
+    <iframe name="iframe" id="iframe" scrolling="yes"
+      src="https://public.tableau.com/views/TabelIO_16078428311070/IO?:language=en&:display_count=y&:publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+      height="480px" width="100%" frameBorder="0"></iframe>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/transition.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+</html>
