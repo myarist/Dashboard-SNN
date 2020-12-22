@@ -25,17 +25,21 @@
       padding-top: 30px;
       padding-left: 60px;
     }
-    
+
     #metadata {
       -webkit-transform: scale(1.1);
       top: 100px;
       padding-top: 30px;
       padding-left: 60px;
     }
-    
+
     body {
       font-family: "Segoe UI";
       font-size: 18px !important;
+      overflow: hidden !important;
+    }
+
+    iframe {
       overflow: hidden;
     }
 
@@ -92,7 +96,6 @@
     }
 
     select {
-      /* font-family: "Roboto Slab"; */
       font-size: 18px;
       border: none;
     }
@@ -164,10 +167,7 @@
 
   <script>
     function onloading() {
-    // var scale = 'scale(1.1)';
-    //   document.body.style.webkitTransform = scale;
-    //   document.body.style.msTransform = scale;
-    //   document.body.style.transform = scale;
+      alert("Selamat Datang di Dashboard SNN\nSilakan klik bagian judul untuk menemukan menu yang lebih lengkap");
       document.getElementById("pilih_menu").style.marginRight = "40%";
       document.getElementById("pilih_menu").style.marginTop = "1px";
       document.getElementById("dashboard").style.display = 'block';
@@ -175,6 +175,7 @@
       document.getElementById("tabel_supply").style.display = 'none';
       document.getElementById("tabel_use").style.display = 'none';
       document.getElementById("tabel_io").style.display = 'none';
+      document.getElementById("tabel_pdb").style.display = 'none';
     }
 
     function pilih_menu() {
@@ -182,7 +183,7 @@
       if (dom == "1") {
         document.getElementById("pilih_menu").style.marginRight = "40%";
         document.getElementById("pilih_menu").style.marginTop = "1px";
-          document.getElementById("judul").style.right = "-241px";
+        document.getElementById("judul").style.right = "-241px";
         document.title = "Dashboard";
         document.getElementById("dashboard").style.display = 'block';
         document.getElementById("metadata").style.display = 'none';
@@ -190,6 +191,7 @@
         document.getElementById("tabel_supply").style.display = 'none';
         document.getElementById("tabel_use").style.display = 'none';
         document.getElementById("tabel_io").style.display = 'none';
+        document.getElementById("tabel_pdb").style.display = 'none';
       } else if (dom == "2") {
         var dot = document.getElementById("pilih_tabel").value;
         if (dot == "1") {
@@ -204,6 +206,7 @@
           document.getElementById("tabel_supply").style.display = 'block';
           document.getElementById("tabel_use").style.display = 'none';
           document.getElementById("tabel_io").style.display = 'none';
+          document.getElementById("tabel_pdb").style.display = 'none';
         } else if (dot == "2") {
           document.getElementById("pilih_menu").style.marginRight = "33%";
           document.getElementById("pilih_tabel").style.marginRight = "4%";
@@ -216,6 +219,7 @@
           document.getElementById("tabel_supply").style.display = 'none';
           document.getElementById("tabel_use").style.display = 'block';
           document.getElementById("tabel_io").style.display = 'none';
+          document.getElementById("tabel_pdb").style.display = 'none';
         } else if (dot == "3") {
           document.getElementById("pilih_menu").style.marginRight = "31%";
           document.getElementById("pilih_tabel").style.marginRight = "0%";
@@ -228,6 +232,20 @@
           document.getElementById("tabel_supply").style.display = 'none';
           document.getElementById("tabel_use").style.display = 'none';
           document.getElementById("tabel_io").style.display = 'block';
+          document.getElementById("tabel_pdb").style.display = 'none';
+        } else if (dot == "4") {
+          document.getElementById("pilih_menu").style.marginRight = "37%";
+          document.getElementById("pilih_tabel").style.marginRight = "11%";
+          document.getElementById("judul").style.right = "-225px";
+          document.getElementById("pilih_menu").style.marginTop = "1px";
+          document.title = "Tabel PDB";
+          document.getElementById("dashboard").style.display = 'none';
+          document.getElementById("metadata").style.display = 'none';
+          document.getElementById("pilih_tabel").style.display = 'block';
+          document.getElementById("tabel_supply").style.display = 'none';
+          document.getElementById("tabel_use").style.display = 'none';
+          document.getElementById("tabel_io").style.display = 'none';
+          document.getElementById("tabel_pdb").style.display = 'block';
         }
       } else if (dom == "3") {
         document.getElementById("pilih_menu").style.marginRight = "33%";
@@ -240,6 +258,7 @@
         document.getElementById("tabel_supply").style.display = 'none';
         document.getElementById("tabel_use").style.display = 'none';
         document.getElementById("tabel_io").style.display = 'none';
+        document.getElementById("tabel_pdb").style.display = 'none';
       }
     }
   </script>
@@ -263,6 +282,7 @@
         <option value="1" selected>Supply</option>
         <option value="2">Use</option>
         <option value="3">I-O</option>
+        <option value="4">PDB</option>
       </select>
     </div>
   </div>
@@ -271,11 +291,11 @@
     <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"
       style="padding: 5px 0 5px 0; font-weight: 400; font-size: 18px; color: #347cbe;">
       <strong>Produk Domestik Bruto</strong> di Negara Sunda Empire pada tahun 2018 berada pada angka <strong><span
-        style="color: #2ff357;">774.039</span></strong> &nbsp; | &nbsp;
+          style="color: #2ff357;">774.039</span></strong> &nbsp; | &nbsp;
       Sumbangan terbesar dihasilkan oleh <strong>Konsumsi Rumah Tangga</strong> yakni sebesar <strong><span
-        style="color: rgb(248, 124, 8);">44,11%</span></strong> &nbsp; | &nbsp;
+          style="color: rgb(248, 124, 8);">44,11%</span></strong> &nbsp; | &nbsp;
       Kemudian dihasilkan pula <strong>Output Multiplier</strong> tertinggi sebesar <strong><span
-        style="color: #00fff2;">2,654</span></strong> yang berasal dari <strong>Industri Konstruksi</strong> 
+          style="color: #00fff2;">2,654</span></strong> yang berasal dari <strong>Industri Konstruksi</strong>
     </marquee>
   </h5>
 
@@ -293,36 +313,42 @@
     </div>
 
     <div id="tabel_supply">
-      <div id="download">
+      <!-- <div id="download">
         <a id="excel" class="btn btn-large btn-success"
           href="https://ayibza.sn.files.1drv.com/y4mBjXeFQ4O4ZJ-01g9xb8wGsIt3721j-p_0dUNfvWf1kYBx0LOWivuUik0JI5ZXIvK6AD9b4HIuRTU9Fj5Y51DTV3CIspxkmTsjpzqM1m-CgkPi_07Mazmgzv9GkmnljPqGvhKnS7nMjBaWRqIISe7Cbalsdn0DrY4KBh9IYn0Wh0?access_token=EwAwA61DBAAUzl/nWKUlBg14ZGcybuC4/OHFdfEAAVLqT%2bDToh9Ll9VrsA/4305pkHPIwsqZUpLpL4VnXWnX%2b7oHQ%2bH6oqA0lXLRIGBTVTq0BEq599eRcYkByZaVD4VyklzgMZowS0bIJIZqm7Cua1blL3F2%2b3K99Rzh/xjr%2bzAt%2bOdFojl9icNtL/HcR3/xRh2GcG0fl43FWeXDakLNGlaYmf2oaF/IjPgWZtHTc3hGrrhDjRh70OiLDQ9dC6jVlvOrYdAPvUpQinWIXCg4qK5by%2b7Y8No8iH3ztUqwjrkSZtH3cg%2bOmW2tb4GPjRMuZW8rfduI5EK5WbsAhExfCmGfOICYTDRfStSoLhFlaNNkttaO10hMnM90qAc1l20DZgAACP5PZJLVdHNhAAKBwsdvs67lL4NyWQ0pEbzd1Cw7DCNn1CPl%2bEe%2bOlQ09SWyQHfj7FOhVLtD4sHj4qwCyDZ/ClH1GA8jBJ6IhwXH/lUyJmytNS4ParW1R/HcJFs/%2bqmRh8fGnbHL9zKy8MkCsEzjnX5K1rO1j6IQoXNGTcq1dDbwwIrlcH3iow8tLma4RiFK1be5vdTNf/DeIyUMkPYl02Mbdy1ddskgbZoo0vZizxpWGV3CEKLy%2b7kjTP3wVVTxDiH5FBWs8v97YpvKXS64Xqv0Hzaz0obFMapU%2bacskvpJEfUWNQDUCVeII/s9rsQughGKJlv8RfLRmh9gBZFr8SRrq083/ebRYnajz2Qaq2RXkj6gPoCvAZeNj/ujaUm%2bBleYPt/nLRAZFl4eDpSeFt/Xb4BoX3bNNMkZzDyXMrf28VtpxtTt2oYE2%2b30wvMZawhp5FUlJ2Zd8fJVr57bXSqQC0xiA1Gnv5F/rJpxgEWAv5tPUutCoMH7Tu8CeqcIyU0ngJqNsVY8G0YdND6G9LqHBbvYkmL5kpmOZKCZlIvHnMa1uUbzrQk0kcplqSi8Qua4LeUpv2FHv7/OPHc6mWcJDjKKQbFlvFtefVb7UADHIjfDG/Aumy/Loy8Z4XonySy589DFf6UjcUUmkA8EL0UQd5KUT0yRg%2bUPo%2bcgFuaWRTJV51RJE76p3yIC">
           <img src="assets/images/excel.png" class="logo"> Excel</a>
-      </div>
+      </div> -->
       <iframe name="iframe" id="iframe" scrolling="yes"
-        src="https://public.tableau.com/views/TabelSupply/Supply?:language=en&:display_count=y&:publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
-        height="530px" width="100%" frameBorder="0"></iframe>
+        src="https://public.tableau.com/views/tabelpdb/Supply?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+        height="580px" width="100%" frameBorder="0"></iframe>
     </div>
 
     <div id="tabel_use">
-      <div id="download">
+      <!-- <div id="download">
         <a id="excel" class="btn btn-large btn-success"
           href="https://ak1zkq.sn.files.1drv.com/y4mEj4vV0xGUdi7RRjPdsFWNzNQLaczp5Q0yQQUbS7SMwMXXaOIwL2sX9_eQka5mCe3vde_lCHxrifT6o8fAujydykZf2z6ENqfm64TwieFROhl39qJAeryBkKL9Ay5kUMzmwmq7qtC8q72UL4Sq2Z-eHt7J1GG-b7zBllYlhJV0Ro?access_token=EwAwA61DBAAUzl/nWKUlBg14ZGcybuC4/OHFdfEAAVLqT%2bDToh9Ll9VrsA/4305pkHPIwsqZUpLpL4VnXWnX%2b7oHQ%2bH6oqA0lXLRIGBTVTq0BEq599eRcYkByZaVD4VyklzgMZowS0bIJIZqm7Cua1blL3F2%2b3K99Rzh/xjr%2bzAt%2bOdFojl9icNtL/HcR3/xRh2GcG0fl43FWeXDakLNGlaYmf2oaF/IjPgWZtHTc3hGrrhDjRh70OiLDQ9dC6jVlvOrYdAPvUpQinWIXCg4qK5by%2b7Y8No8iH3ztUqwjrkSZtH3cg%2bOmW2tb4GPjRMuZW8rfduI5EK5WbsAhExfCmGfOICYTDRfStSoLhFlaNNkttaO10hMnM90qAc1l20DZgAACP5PZJLVdHNhAAKBwsdvs67lL4NyWQ0pEbzd1Cw7DCNn1CPl%2bEe%2bOlQ09SWyQHfj7FOhVLtD4sHj4qwCyDZ/ClH1GA8jBJ6IhwXH/lUyJmytNS4ParW1R/HcJFs/%2bqmRh8fGnbHL9zKy8MkCsEzjnX5K1rO1j6IQoXNGTcq1dDbwwIrlcH3iow8tLma4RiFK1be5vdTNf/DeIyUMkPYl02Mbdy1ddskgbZoo0vZizxpWGV3CEKLy%2b7kjTP3wVVTxDiH5FBWs8v97YpvKXS64Xqv0Hzaz0obFMapU%2bacskvpJEfUWNQDUCVeII/s9rsQughGKJlv8RfLRmh9gBZFr8SRrq083/ebRYnajz2Qaq2RXkj6gPoCvAZeNj/ujaUm%2bBleYPt/nLRAZFl4eDpSeFt/Xb4BoX3bNNMkZzDyXMrf28VtpxtTt2oYE2%2b30wvMZawhp5FUlJ2Zd8fJVr57bXSqQC0xiA1Gnv5F/rJpxgEWAv5tPUutCoMH7Tu8CeqcIyU0ngJqNsVY8G0YdND6G9LqHBbvYkmL5kpmOZKCZlIvHnMa1uUbzrQk0kcplqSi8Qua4LeUpv2FHv7/OPHc6mWcJDjKKQbFlvFtefVb7UADHIjfDG/Aumy/Loy8Z4XonySy589DFf6UjcUUmkA8EL0UQd5KUT0yRg%2bUPo%2bcgFuaWRTJV51RJE76p3yIC">
           <img src="assets/images/excel.png" class="logo"> Excel</a>
-      </div>
+      </div> -->
       <iframe name="iframe" id="iframe" scrolling="yes"
-        src="https://public.tableau.com/views/TabelUse/Use?:language=en&:display_count=y&:publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
-        height="530px" width="100%" frameBorder="0"></iframe>
+        src="https://public.tableau.com/views/tabelpdb/Use?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+        height="580px" width="100%" frameBorder="0"></iframe>
     </div>
 
     <div id="tabel_io">
-      <div id="download">
+      <!-- <div id="download">
         <a id="excel" class="btn btn-large btn-success"
           href="https://npbcbg.sn.files.1drv.com/y4mt1jaqu_bKTi_I25Q8OwNAQyyvo3QH0qe8zeiikMUqkKJ1Z3sjXCOTLFsNbEIJaR1xAOrqsLvJW06VeyzZ5ArCK2d2QOKuE9j4MJtiFbUGBdQhEQiZ72-MLQVkHTQPmeKee4oYNG2K6SZa9tUgxzFut0jFjkZXaYV6m0wyhyDsI4?access_token=EwAwA61DBAAUzl/nWKUlBg14ZGcybuC4/OHFdfEAAVLqT%2bDToh9Ll9VrsA/4305pkHPIwsqZUpLpL4VnXWnX%2b7oHQ%2bH6oqA0lXLRIGBTVTq0BEq599eRcYkByZaVD4VyklzgMZowS0bIJIZqm7Cua1blL3F2%2b3K99Rzh/xjr%2bzAt%2bOdFojl9icNtL/HcR3/xRh2GcG0fl43FWeXDakLNGlaYmf2oaF/IjPgWZtHTc3hGrrhDjRh70OiLDQ9dC6jVlvOrYdAPvUpQinWIXCg4qK5by%2b7Y8No8iH3ztUqwjrkSZtH3cg%2bOmW2tb4GPjRMuZW8rfduI5EK5WbsAhExfCmGfOICYTDRfStSoLhFlaNNkttaO10hMnM90qAc1l20DZgAACP5PZJLVdHNhAAKBwsdvs67lL4NyWQ0pEbzd1Cw7DCNn1CPl%2bEe%2bOlQ09SWyQHfj7FOhVLtD4sHj4qwCyDZ/ClH1GA8jBJ6IhwXH/lUyJmytNS4ParW1R/HcJFs/%2bqmRh8fGnbHL9zKy8MkCsEzjnX5K1rO1j6IQoXNGTcq1dDbwwIrlcH3iow8tLma4RiFK1be5vdTNf/DeIyUMkPYl02Mbdy1ddskgbZoo0vZizxpWGV3CEKLy%2b7kjTP3wVVTxDiH5FBWs8v97YpvKXS64Xqv0Hzaz0obFMapU%2bacskvpJEfUWNQDUCVeII/s9rsQughGKJlv8RfLRmh9gBZFr8SRrq083/ebRYnajz2Qaq2RXkj6gPoCvAZeNj/ujaUm%2bBleYPt/nLRAZFl4eDpSeFt/Xb4BoX3bNNMkZzDyXMrf28VtpxtTt2oYE2%2b30wvMZawhp5FUlJ2Zd8fJVr57bXSqQC0xiA1Gnv5F/rJpxgEWAv5tPUutCoMH7Tu8CeqcIyU0ngJqNsVY8G0YdND6G9LqHBbvYkmL5kpmOZKCZlIvHnMa1uUbzrQk0kcplqSi8Qua4LeUpv2FHv7/OPHc6mWcJDjKKQbFlvFtefVb7UADHIjfDG/Aumy/Loy8Z4XonySy589DFf6UjcUUmkA8EL0UQd5KUT0yRg%2bUPo%2bcgFuaWRTJV51RJE76p3yIC">
           <img src="assets/images/excel.png" class="logo"> Excel</a>
-      </div>
+      </div> -->
       <iframe name="iframe" id="iframe" scrolling="yes"
-        src="https://public.tableau.com/views/TabelIO_16078428311070/IO?:language=en&:display_count=y&:publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
-        height="530px" width="100%" frameBorder="0"></iframe>
+        src="https://public.tableau.com/views/tabelpdb/IO?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+        height="580px" width="100%" frameBorder="0"></iframe>
+    </div>
+
+    <div id="tabel_pdb">
+      <iframe name="iframe" id="iframe" scrolling="yes"
+        src="https://public.tableau.com/views/tabelpdb/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no&:embed=yes&:toolbar=no"
+        height="580px" width="100%" frameBorder="0"></iframe>
     </div>
   </div>
 
