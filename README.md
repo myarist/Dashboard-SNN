@@ -2,12 +2,12 @@
 
 ## Dashboard
 
-![](readme\dashboard.jpeg)
+![](readme/dashboard.jpeg)
 
 ## Data Table
 
-![](readme\data.jpeg)
+![](readme/data.jpeg)
 
 ## Metadata
 
-![](readme\metadata.jpeg)
+![](readme/metadata.jpeg)
